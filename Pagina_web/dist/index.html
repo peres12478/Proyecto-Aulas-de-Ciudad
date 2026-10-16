@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e35"><meta name="description" content="Órbita UCO: una nueva forma de explorar tu progreso académico. Demo educativa con notas e insignias."><title>Órbita UCO · Tu siguiente gran paso</title><link rel="icon" type="image/x-icon" href="favicon.ico?v=2"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"><link rel="shortcut icon" href="favicon.ico?v=2"><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body>
+<section id="login-view" class="login-layout">
+  <div class="login-story">
+    <a class="brand light" href="./"><span class="brand-symbol">◉</span><span>órbita<span class="brand-uco">UCO / CAMPUS ACADÉMICO</span></span></a>
+    <div class="story-copy"><span class="eyebrow">TU TALENTO TIENE SU PROPIA ÓRBITA</span><h1>Aprender.<br>Crecer.<br><em>Llegar más lejos.</em></h1><p>Cada reto cuenta. Cada logro te acerca.<br>Un espacio para descubrir hasta dónde puedes llegar.</p></div>
+    <div class="orbital-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><span class="planet">✳</span><span class="satellite">✦</span><span class="orbit-label">UNIVERSO DE POSIBILIDADES</span></div>
+    <div class="story-footer"><span>Universidad Católica de Oriente</span><span>Rionegro, Antioquia ↗</span></div>
+  </div>
+  <div class="login-panel"><span class="demo-tag"><i></i> LABORATORIO ACADÉMICO · DEMO</span>
+    <div class="login-form-wrap"><span class="eyebrow muted">BIENVENIDO A TU CAMPUS</span><h2>Tu próximo logro<br>empieza aquí.</h2><p class="muted">Ingresa y conecta con tu progreso.</p>
+      <div class="role-switch" aria-label="Rol de acceso"><button type="button" class="selected" data-role="student" aria-pressed="true">♧ Estudiante</button><button type="button" data-role="professor" aria-pressed="false">▣ Profesor</button></div>
+      <form id="login-form"><label for="email">Correo electrónico o documento</label><input id="email" type="text" autocomplete="username" placeholder="Correo, TI o cédula de ciudadanía" required>
+      <label for="password">Contraseña</label><div class="password-field"><input id="password" type="password" autocomplete="current-password" placeholder="Ingresa tu contraseña" required><button type="button" id="toggle-password" aria-label="Mostrar contraseña">Ver</button></div>
+      <p id="login-error" class="error" role="alert"></p><button class="primary full" type="submit">Entrar a mi órbita <span>↗</span></button></form>
+      <div class="account-switch"><span>¿Aún no tienes cuenta?</span><button type="button" id="show-register" class="text-button">Crear cuenta nueva ↗</button></div>
+      <form id="register-form" hidden>
+        <div class="register-heading"><h3>Únete a Órbita UCO</h3><p class="muted">Crea tu espacio académico como estudiante o profesor.</p></div>
+        <label for="register-name">Nombre completo</label><input id="register-name" maxlength="80" autocomplete="name" placeholder="Tu nombre y apellido" required>
+        <label for="register-email">Correo electrónico</label><input id="register-email" type="email" maxlength="120" autocomplete="email" placeholder="tu.correo@ejemplo.com" required>
+        <div class="form-grid register-doc-grid">
+          <div><label for="register-document-type">Tipo de documento</label><select id="register-document-type" required><option value="TI">Tarjeta de identidad (TI)</option><option value="CC">Cédula de ciudadanía (CC)</option></select></div>
+          <div><label for="register-document-number">Número de documento</label><input id="register-document-number" maxlength="20" autocomplete="off" placeholder="Sin puntos ni espacios" required></div>
+        </div>
+        <label for="register-role">Quiero registrarme como</label><select id="register-role" required><option value="student">Estudiante</option><option value="professor">Profesor</option></select>
+        <div id="student-fields">
+          <label for="register-career">Ingeniería que estudias</label>
+          <select id="register-career" required><option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option><option value="Ingeniería Electrónica">Ingeniería Electrónica</option><option value="Ingeniería Ambiental">Ingeniería Ambiental</option><option value="Ingeniería Industrial">Ingeniería Industrial</option></select>
+        </div>
+        <div id="professor-fields" hidden>
+          <label for="register-career-professor">Carrera universitaria / área profesional</label><input id="register-career-professor" maxlength="100" placeholder="Ej. Ingeniería Mecánica">
+          <label for="register-subject">Materia que dictas</label><select id="register-subject"><option value="">Selecciona una materia</option><option>Matemáticas</option><option>Física</option><option>Química</option><option>Cálculo Diferencial</option><option>Cálculo Integral</option><option>Álgebra Lineal</option><option>Estadística</option><option>Programación Orientada a Objetos</option><option>Estructuras de Datos</option><option>Bases de Datos</option><option>Algoritmos</option><option>Circuitos Eléctricos</option><option>Electrónica Digital</option><option>Termodinámica</option><option>Mecánica</option><option>Biología</option><option>Ecología</option><option>Gestión de Operaciones</option><option>Investigación de Operaciones</option><option>Dibujo Técnico</option></select>
+          <label for="register-teacher-code">Código de habilitación docente</label><input id="register-teacher-code" type="password" maxlength="128" autocomplete="off" placeholder="Código institucional de demostración">
+          <p class="form-note">La demo valida un código local configurable. No es una conexión oficial con el Ministerio de Educación.</p>
+        </div>
+        <label for="register-password">Contraseña (mínimo 8 caracteres)</label><input id="register-password" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+        <label for="register-confirm">Confirmar contraseña</label><input id="register-confirm" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+        <p id="register-error" class="error" role="alert"></p><button class="primary full" type="submit">Crear mi cuenta <span>↗</span></button>
+        <div class="account-switch"><span>¿Ya tienes cuenta?</span><button type="button" id="show-login" class="text-button">Volver a iniciar sesión</button></div>
+      </form>
+      <div class="demo-box" id="demo-box"><span class="eyebrow">¿QUIERES EXPLORAR PRIMERO?</span><p>También puedes entrar con una cuenta de demostración.</p><button id="demo-login" class="text-button">Usar cuenta de estudiante <span>→</span></button><small id="demo-credentials">valentina@uco.demo · Orbita2026!</small></div>
+    </div><footer>Proyecto de clase · Datos ficticios · Sin afiliación oficial</footer>
+  </div>
+</section>
+<section id="app-view" class="app-layout" hidden>
+  <aside class="sidebar"><a class="brand" href="./"><span class="brand-symbol">◉</span><span>órbita<span class="brand-uco">UCO / CAMPUS ACADÉMICO</span></span></a><div class="workspace-label">MI ESPACIO</div><nav aria-label="Navegación principal"><button data-view="overview" class="nav-item active">◫ <span>Mi panorama</span><span>↗</span></button><button data-view="grades" class="nav-item">▤ <span id="grades-nav-label">Mis calificaciones</span></button><button data-view="badges" class="nav-item">✧ <span>Mis insignias</span></button><button data-view="history" class="nav-item" id="history-nav">◷ <span>Bitácora</span></button><button data-view="professors" class="nav-item" id="professors-nav">⌕ <span id="professors-nav-label">Buscar profesores</span></button><button data-view="calendar" class="nav-item" id="calendar-nav">▦ <span>Calendario de clases</span></button><button data-view="chats" class="nav-item" id="chats-nav">◉ <span>Chats</span><span id="chats-unread-badge" class="unread-badge" hidden></span></button><button data-view="profile" class="nav-item" id="profile-nav" hidden>◎ <span>Perfil académico</span></button></nav><div class="sidebar-bottom"><div class="side-note"><span>✳</span><h3>El progreso es personal.</h3><p>Tu mejor referencia es quien eras ayer.</p></div><span class="workspace-label">UNIVERSIDAD CATÓLICA DE ORIENTE</span><p class="small muted">Prototipo académico · 2026</p></div></aside>
+  <div class="app-body"><header class="topbar"><span>Campus <span class="muted">/</span> <b id="breadcrumb">Mi panorama</b></span><div class="topbar-right"><span class="local-tag">● Demo local</span><span class="avatar" id="avatar">VR</span><div class="user-mini"><b id="user-name"></b><small id="user-role"></small></div><button id="logout" class="icon-button" aria-label="Cerrar sesión" title="Cerrar sesión">↪</button></div></header>
+  <main id="main-content" tabindex="-1"></main><footer class="app-footer"><span>Hecho para aprender. Diseñado para avanzar.</span><span>ÓRBITA UCO <span class="footer-star">✳</span></span></footer></div>
+</section>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+</body></html>
