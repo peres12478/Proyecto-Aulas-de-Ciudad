@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ## Tareas Miguel Ángel Pérez García- José Manuel Valencia Gallego
 # ORBITA UCO
  ## LLave para el registro de profesores : ORBITA-DOCENTE-DEMO-2026
@@ -59,5 +59,4 @@ persisten.** Para reiniciar la demo, detén el servidor y borra `datos/`.
 # Proyecto-Aulas-de-Ciudad
 Tareas Miguel Ángel Pérez García- José Manuel Valencia Gallego
 Este Proyecto permite la creación de Profesores / Estudiantes donde el límite no está definido (puede agregar cuantos estudiantes quieras) además de que asigna la nota de la respectiva materia (no solo de una, si no de las que sean necesarias).
-PhD Ejecutar el Código desde el Sistema el cual es el núcleo de todo (Main).
->>>>>>> 3ad95c6526eed48fcac1f75f5cce55e2b839815c
+
